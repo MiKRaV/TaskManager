@@ -60,7 +60,7 @@ public class TaskService {
             throw new AccessDeniedException("Only author or admin can edit task");
         }
 
-        if (taskData != null) {
+        if (taskData.getTitle() != null) {
             task.setTitle(taskData.getTitle());
         }
 

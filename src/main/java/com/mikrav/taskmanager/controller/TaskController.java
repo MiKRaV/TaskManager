@@ -8,6 +8,7 @@ import com.mikrav.taskmanager.model.entity.TaskStatus;
 import com.mikrav.taskmanager.model.entity.User;
 import com.mikrav.taskmanager.service.TaskService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tasks")
 @SecurityRequirement(name = "Authorization")
+@Tag(name = "Task API")
 public class TaskController {
 
     @Autowired

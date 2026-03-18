@@ -4,7 +4,6 @@ import com.mikrav.taskmanager.model.entity.Task;
 import com.mikrav.taskmanager.model.entity.TaskPriority;
 import com.mikrav.taskmanager.model.entity.TaskStatus;
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,8 +14,10 @@ import java.time.LocalDateTime;
 @Schema(description = "Task Create/Update response")
 public class TaskResponse {
 
+    @Schema(description = "Id", example = "1")
+    private Long id;
+
     @Schema(description = "Title", example = "Create a web")
-    @NotBlank(message = "Title is required")
     private String title;
 
     @Schema(description = "Description", example = "Need more web cartridges")
@@ -42,6 +43,7 @@ public class TaskResponse {
 
     public static TaskResponse from(Task task) {
         TaskResponse response = new TaskResponse();
+        response.setId(task.getId());
         response.setTitle(task.getTitle());
         response.setDescription(task.getDescription());
         response.setStatus(task.getStatus());

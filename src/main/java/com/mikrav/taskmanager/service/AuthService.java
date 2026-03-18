@@ -45,7 +45,6 @@ public class AuthService {
         ));
 
         User user = userService.getByUsername(loginRequest.getUsername());
-        jwtService.generateToken(user);
         String jwtToken = jwtService.generateToken(user);
         return new LoginResponse(jwtToken);
     }

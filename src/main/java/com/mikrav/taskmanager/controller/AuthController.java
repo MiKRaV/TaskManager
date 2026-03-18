@@ -5,6 +5,7 @@ import com.mikrav.taskmanager.model.dto.LoginResponse;
 import com.mikrav.taskmanager.model.dto.RegisterRequest;
 import com.mikrav.taskmanager.model.dto.RegisterResponse;
 import com.mikrav.taskmanager.service.AuthService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
+@Tag(name = "Auth API")
 public class AuthController {
 
     @Autowired

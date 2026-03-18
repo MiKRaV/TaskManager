@@ -1,0 +1,384 @@
+{
+  "info": {
+    "_postman_id": "e125c87e-185e-41e4-91f9-c1997503576e",
+    "name": "tasks",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7664686"
+  },
+  "item": [
+    {
+      "name": "create",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcGlkZXJtYW4iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3Mzc3ODczNSwiZXhwIjoxNzczODY1MTM1fQ.MDHWHoVGPD5YIfrZt5YKq5mz7qWouQElzV1e6QdjQIM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Create a web\",\r\n    \"description\": \"Need more web cartridges\",\r\n    \"status\": \"IN_PROGRESS\",\r\n    \"priority\": \"MEDIUM\",\r\n    \"assigneeId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "create",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Create a web\",\r\n    \"description\": \"Need more web cartridges\",\r\n    \"status\": \"IN_PROGRESS\",\r\n    \"priority\": \"MEDIUM\",\r\n    \"assigneeId\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tasks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tasks"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"id\": 5,\n    \"title\": \"Create a web\",\n    \"description\": \"Need more web cartridges\",\n    \"status\": \"IN_PROGRESS\",\n    \"priority\": \"MEDIUM\",\n    \"authorId\": 2,\n    \"assigneeId\": 1,\n    \"createdAt\": \"2026-03-17T23:20:41.328179\",\n    \"updatedAt\": \"2026-03-17T23:20:41.328179\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "all-tasks",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzczNTgwNDUwLCJleHAiOjE3NzM2NjY4NTB9.Ryub3ennA_ysqBNLp2COkczgzS26jzfVh47P3sw_kQ0",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "all-tasks",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/tasks?assigneeId=1&authorId=2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tasks"
+              ],
+              "query": [
+                {
+                  "key": "assigneeId",
+                  "value": "1"
+                },
+                {
+                  "key": "authorId",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "[\n    {\n        \"id\": 5,\n        \"title\": \"Create a web\",\n        \"description\": \"Need more web cartridges\",\n        \"status\": \"IN_PROGRESS\",\n        \"priority\": \"MEDIUM\",\n        \"authorId\": 2,\n        \"assigneeId\": 1,\n        \"createdAt\": \"2026-03-17T23:20:41.328179\",\n        \"updatedAt\": \"2026-03-17T23:20:41.328179\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "get-task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcGlkZXJtYW4iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3MzU4NTI1OSwiZXhwIjoxNzczNjcxNjU5fQ.lSqqbkKVk_2M7kZjq-XDUqdIdEDzKHxGDYlxq7mc5RA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tasks/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "get-task",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/tasks/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tasks",
+                "5"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\r\n    \"id\": 5,\r\n    \"title\": \"Create a web\",\r\n    \"description\": \"Need more web cartridges\",\r\n    \"status\": \"IN_PROGRESS\",\r\n    \"priority\": \"MEDIUM\",\r\n    \"authorId\": 2,\r\n    \"assigneeId\": 1,\r\n    \"createdAt\": \"2026-03-17T23:20:41.328179\",\r\n    \"updatedAt\": \"2026-03-17T23:20:41.328179\"\r\n}"
+        }
+      ]
+    },
+    {
+      "name": "update",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcGlkZXJtYW4iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3Mzc3ODczNSwiZXhwIjoxNzczODY1MTM1fQ.MDHWHoVGPD5YIfrZt5YKq5mz7qWouQElzV1e6QdjQIM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Create a web\",\r\n    \"description\": \"Need more web cartridges\",\r\n    \"status\": \"DONE\",\r\n    \"priority\": \"MEDIUM\",\r\n    \"assigneeId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tasks/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks",
+            "5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "update",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"Create a web\",\r\n    \"description\": \"Need more web cartridges\",\r\n    \"status\": \"DONE\",\r\n    \"priority\": \"MEDIUM\",\r\n    \"assigneeId\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tasks/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tasks",
+                "5"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"id\": 5,\n    \"title\": \"Create a web\",\n    \"description\": \"Need more web cartridges\",\n    \"status\": \"DONE\",\n    \"priority\": \"MEDIUM\",\n    \"authorId\": 2,\n    \"assigneeId\": 1,\n    \"createdAt\": \"2026-03-17T23:20:41.328179\",\n    \"updatedAt\": \"2026-03-17T23:26:33.725533\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "delete",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcGlkZXJtYW4iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc3Mzc3ODczNSwiZXhwIjoxNzczODY1MTM1fQ.MDHWHoVGPD5YIfrZt5YKq5mz7qWouQElzV1e6QdjQIM",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tasks/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks",
+            "5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "delete",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/tasks/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tasks",
+                "5"
+              ]
+            }
+          },
+          "_postman_previewlanguage": null,
+          "header": null,
+          "cookie": [],
+          "body": null
+        }
+      ]
+    }
+  ]
+}
